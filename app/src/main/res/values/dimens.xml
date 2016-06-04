@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	//list view
+	<dimen name="material_default_list_item_height">72dp</dimen>
+	<dimen name="material_default_list_title_height">72dp</dimen>
+	<dimen name="material_default_list_item_vertical_spacing">8dp</dimen>
+	<dimen name="expandable_sub_item_left_margin">32dp</dimen>
+
+	//in general
+	<dimen name="material_default_spacing">8dp</dimen>
+	<dimen name="material_default_side_margin">16dp</dimen>
+	<dimen name="material_default_status_bar_height">24dp</dimen>
+	<dimen name="material_default_subtitle_height">48dp</dimen>
+	<dimen name="default_elevation">2dp</dimen>
+
+	//for icons
+	<dimen name="material_default_touch_target_size">48dp</dimen>
+	<dimen name="material_default_avatar_size">40dp</dimen>
+	<dimen name="material_default_icon_size">24dp</dimen>
+
+	//for button
+	<dimen name="material_default_floating_action_button_size">56dp</dimen>
+	<dimen name="material_default_button_height">36dp</dimen>
+	<dimen name="material_default_button_touch_target_height">48dp</dimen>
+
+
+	//for app bar
+	<dimen name="material_default_app_bar_height">56dp</dimen>
+	<dimen name="material_default_app_bar_title_left_padding">72dp</dimen>
+	<dimen name="material_default_app_bar_title_bottom_padding">20dp</dimen>
+	<dimen name="material_default_app_bar_side">16dp</dimen>
+	<dimen name="material_default_app_bar_icon_top_padding">16dp</dimen>
+	<dimen name="material_default_app_bar_icon_bottom_padding">16dp</dimen>
+	<dimen name="material_default_app_bar_icon_left_padding">16dp</dimen>
+
+	//for text
+	<dimen name="material_english_text_display_4">112sp</dimen>
+	<dimen name="material_english_text_display_3">56sp</dimen>
+	<dimen name="material_english_text_display_2">45sp</dimen>
+	<dimen name="material_english_text_display_1">34sp</dimen>
+	<dimen name="material_english_text_headline">24sp</dimen>
+	<dimen name="material_english_text_title">20sp</dimen>
+	<dimen name="material_english_text_subheading">16sp</dimen>
+	<dimen name="material_english_text_body">14sp</dimen>
+	<dimen name="material_english_text_caption">12sp</dimen>
+	<dimen name="material_english_text_button">14sp</dimen>
+
+	//for spinner
+	<dimen name="material_menu_item_height">48dp</dimen>
+	<dimen name="material_menu_item_side_padding">16dp</dimen>
+	<dimen name="material_menu_item_top_bottom_padding">16dp</dimen>
+	<dimen name="material_menu_item_font">16sp</dimen>
+
+
+	//Cardview
+	<dimen name="material_card_title_top_padding">24dp</dimen>
+	<dimen name="material_card_title_side_padding">16dp</dimen>
+	<dimen name="material_card_title_bottom_padding">16dp</dimen>
+	<dimen name="material_card_action_button_padding">8dp</dimen>
+	<dimen name="material_card_side_margin">8dp</dimen>
+	<dimen name="material_card_spacing">8dp</dimen>
+	<dimen name="default_card_height">250dp</dimen>
+	<dimen name="card_radius">2dp</dimen>
+	<dimen name="card_elevation">2dp</dimen>
+	<item name="default_card_background_aspect_ratio" format="float" type="dimen">1.66</item>
+
+	//For tab
+	<dimen name="material_tab_height">48dp</dimen>
+
+
+	//Chat bubble
+	<dimen name="chat_bubble_elevation">4dp</dimen>
+	<dimen name="chat_bubble_radius">16dp</dimen>
+	<item name="chat_bubble_icon_ratio" format="float" type="dimen">1.0</item>
+	<dimen name="chat_bubble_icon_height">45dp</dimen>
+	<dimen name="chat_bubble_text_content_padding">16dp</dimen>
+	<dimen name="chat_img_height">100dp</dimen>
+	<dimen name="chat_img_width">100dp</dimen>
+
+	//Timeline
+	<dimen name="timeline_img_size_grid">100dp</dimen>
+	<dimen name="timeline_img_size_normal_width">100dp</dimen>
+	<dimen name="timeline_img_size_normal_height">150dp</dimen>
+
+	<dimen name="search_suggestion_equipment_status_size">10dp</dimen>
+	//For info_window
+	<dimen name="info_window_radius">5dp</dimen>
+
+	//For item gallery image
+	<dimen name="general_margin">5dp</dimen>
+	<dimen name="gallery_image_size_length">56dp</dimen>
+
+	//For item gym detail
+	<dimen name="gym_detail_height">150dp</dimen>
+	<dimen name="recycler_height">68dp</dimen>
+	<dimen name="app_bar_height">192dp</dimen>
+	<dimen name="gym_app_bar_text_margin">64dp</dimen>
+
+	//For gym
+	<dimen name="gym_elevation">5dp</dimen>
+
+	//For gym gallery
+	<dimen name="gallery_width">600dp</dimen>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</resources>

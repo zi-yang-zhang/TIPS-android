@@ -1,0 +1,51 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.1.0'
+        classpath 'com.getkeepsafe.dexcount:dexcount-gradle-plugin:0.5.0'
+        classpath 'io.realm:realm-gradle-plugin:1.0.0'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    globalCompileSdkVersion = 23
+    globalBuildToolsVersion = "23.0.3"
+    globalMinSdkVersion = 16
+    globalTargetSdkVersion = 23
+
+    globalSupportLibVersion = "23.4.0"
+    globalSourceCompatibility = JavaVersion.VERSION_1_7
+    globalTargetCompatibility = JavaVersion.VERSION_1_7
+
+    rxandroid = "1.1.0"
+    rxjava = "1.1.0"
+    junit = "4.12"
+    fresco = "0.9.0"
+    butterknife = "7.0.1"
+    dagger = "1.2.2"
+    retrofit = "2.0.0"
+    gson = "2.6.1"
+    percentage = "23.1.1"
+    timber = "4.1.1"
+    rxrelay = "1.1.0"
+    realmadapter ="1.2.1"
+    constraintlayout ="1.0.0-alpha1"
+}

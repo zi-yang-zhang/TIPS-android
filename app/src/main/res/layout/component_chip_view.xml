@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textSize="@dimen/material_english_text_body"
+          android:textStyle="bold"
+          android:paddingLeft="@dimen/material_default_spacing"
+          android:paddingRight="@dimen/material_default_spacing">
+
+</TextView>
