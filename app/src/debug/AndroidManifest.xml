@@ -3,12 +3,12 @@
           xmlns:tools="http://schemas.android.com/tools">
 
 	<application>
-		<activity android:name="com.tnt.android.main.MainActivity">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN"/>
-				<category android:name="android.intent.category.LAUNCHER" />
-			</intent-filter>
-		</activity>
+		<!--<activity android:name="com.tips.android.main.MainActivity">-->
+			<!--<intent-filter>-->
+				<!--<action android:name="android.intent.action.MAIN"/>-->
+				<!--<category android:name="android.intent.category.LAUNCHER" />-->
+			<!--</intent-filter>-->
+		<!--</activity>-->
 	</application>
 
 </manifest>

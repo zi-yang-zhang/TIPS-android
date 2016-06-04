@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/enter_budget_background_1">
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:text="How much are you willing to spend"
+		android:id="@+id/title"
+		android:layout_gravity="center_horizontal"
+		android:layout_centerVertical="true"
+		android:layout_centerHorizontal="true"
+		android:textColor="#FFFFFF"
+		android:textStyle="bold"
+		android:layout_margin="8dp"/>
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		tools:text="100"
+		android:id="@+id/budget"
+		android:layout_gravity="center_horizontal"
+		android:textColor="#FFFFFF"
+		android:textStyle="bold"
+		android:layout_centerHorizontal="true"
+		android:layout_below="@+id/title"
+		android:layout_margin="8dp"
+		android:visibility="gone"/>
+
+	<EditText
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:inputType="number"
+		android:ems="10"
+		android:id="@+id/enter_budge_field"
+		android:layout_below="@+id/title"
+		android:layout_centerHorizontal="true"
+		android:layout_margin="8dp"/>
+</RelativeLayout>

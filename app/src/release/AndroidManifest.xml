@@ -4,7 +4,7 @@
 	<application>
 
 
-		<activity android:name=".main.MainActivity">
+		<activity android:name="com.tips.android.main.MainActivity">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN"/>
 				<category android:name="android.intent.category.LAUNCHER" />
