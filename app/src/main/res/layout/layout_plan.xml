@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                xmlns:tools="http://schemas.android.com/tools">
+	<android.support.v7.widget.CardView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/depart_flight"
+		android:layout_centerHorizontal="true"
+		android:layout_margin="8dp">
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/depart_flight_name"
+				android:layout_margin="8dp"
+				tools:text="Air Canada"/>
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/depart_flight_price"
+				android:layout_margin="8dp"
+				tools:text="200$"
+				android:layout_toRightOf="@+id/depart_flight_name"
+				android:layout_toEndOf="@+id/depart_flight_name"/>
+		</RelativeLayout>
+	</android.support.v7.widget.CardView>
+	<android.support.v7.widget.CardView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/return_flight"
+		android:layout_below="@+id/depart_flight"
+		android:layout_centerHorizontal="true"
+		android:layout_margin="8dp">
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_margin="8dp"
+				android:id="@+id/return_flight_name"
+				tools:text="Air Canada"/>
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_margin="8dp"
+				android:id="@+id/return_flight_price"
+				tools:text="200$"
+				android:layout_toRightOf="@+id/return_flight_name"/>
+		</RelativeLayout>
+	</android.support.v7.widget.CardView>
+	<android.support.v7.widget.CardView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/hotel"
+		android:layout_below="@+id/return_flight"
+		android:layout_centerHorizontal="true"
+		android:layout_margin="8dp">
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_margin="8dp"
+				android:id="@+id/hotel_name"
+				tools:text="some hotel"/>
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_margin="8dp"
+				android:id="@+id/hotel_price"
+				tools:text="200$"
+				android:layout_alignParentTop="true"
+				android:layout_toRightOf="@+id/hotel_name"
+				android:layout_toEndOf="@+id/hotel_name"/>
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_margin="8dp"
+				android:id="@+id/hotel_star_title"
+				android:text="Star:"
+				android:layout_below="@+id/hotel_name"/>
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_margin="8dp"
+				android:id="@+id/hotel_star_rating"
+				tools:text="4.5"
+				android:layout_toRightOf="@+id/hotel_star_title"
+				android:layout_alignBaseline="@+id/hotel_star_title"/>
+		</RelativeLayout>
+
+	</android.support.v7.widget.CardView>
+	<android.support.v7.widget.CardView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/hotel"
+		android:layout_centerHorizontal="true"
+		android:layout_margin="8dp"
+		android:id="@+id/view">
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_margin="8dp"
+				android:id="@+id/floating_title"
+				android:text="Daily expenses estimates"
+				/>
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_margin="8dp"
+				tools:text="20$"
+				android:layout_toRightOf="@+id/floating_title"/>
+		</RelativeLayout>
+	</android.support.v7.widget.CardView>
+
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="8dp"
+		android:id="@+id/total"
+		android:textSize="32sp"
+		android:textStyle="bold"
+		tools:text="2000$"
+		android:layout_above="@+id/difference"
+		android:layout_centerHorizontal="true"/>
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="8dp"
+		android:id="@+id/difference"
+		android:layout_alignParentBottom="true"
+		android:layout_centerHorizontal="true"
+		android:textSize="32sp"
+		android:textStyle="bold"
+		tools:textColor="@color/red"
+		tools:text="200$"/>
+
+	<CheckBox
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Car Rental"
+		android:id="@+id/car_rental_check"
+		android:layout_below="@+id/view"
+		android:layout_centerHorizontal="true"
+		android:checked="true"/>
+
+
+</RelativeLayout>

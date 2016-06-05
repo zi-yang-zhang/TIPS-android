@@ -71,5 +71,23 @@
 		android:gravity="center"
 		android:layout_below="@+id/estimate_title"
 		android:layout_centerHorizontal="true"/>
+	<Button
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Save"
+		android:layout_alignParentBottom="true"
+		android:layout_centerHorizontal="true"
+		android:layout_margin="8dp"
+		android:visibility="gone"
+		android:id="@+id/go_to_plan"/>
+
+	<CheckBox
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="With car rental"
+		android:id="@+id/car_rental_check"
+		android:layout_centerVertical="true"
+		android:layout_centerHorizontal="true"
+		android:checked="true"/>
 
 </RelativeLayout>

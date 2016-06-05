@@ -24,6 +24,7 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import rx.Observable;
+import rx.functions.Action1;
 import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 import timber.log.Timber;
@@ -44,6 +45,7 @@ public class EstimateManager {
 
 
 	TravelDateAndDuration duration =new TravelDateAndDuration();
+	EstimateResponse estimateResponse;
 
 	public TravelDateAndDuration getDuration() {
 		return duration;
@@ -64,7 +66,7 @@ public class EstimateManager {
 	public EstimateManager(){
 		HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
 		interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-		OkHttpClient client = new OkHttpClient.Builder().connectTimeout(2000, TimeUnit.MINUTES).addInterceptor(interceptor).build();
+		OkHttpClient client = new OkHttpClient.Builder().connectTimeout(0, TimeUnit.MILLISECONDS).addInterceptor(interceptor).build();
 
 		expediaAPI =  new Retrofit.Builder()
 				.client(client)
@@ -169,7 +171,13 @@ public class EstimateManager {
 	}
 
 	public Observable<Double> getEstimates(){
-		return jiAPI.getEstimates(currentEstimation).onErrorReturn(new Func1<Throwable, EstimateResponse>() {
+		return jiAPI.getEstimates(currentEstimation)
+				.doOnNext(new Action1<EstimateResponse>() {
+					@Override
+					public void call(EstimateResponse response) {
+						estimateResponse = response;
+					}
+				}).onErrorReturn(new Func1<Throwable, EstimateResponse>() {
 			@Override
 			public EstimateResponse call(Throwable throwable) {
 				Timber.e(throwable, "Retrofit error");
@@ -182,5 +190,9 @@ public class EstimateManager {
 				return estimateResponse.getTotalExpense();
 			}
 		});
+	}
+
+	public EstimateResponse getEstimateResponse() {
+		return estimateResponse;
 	}
 }
