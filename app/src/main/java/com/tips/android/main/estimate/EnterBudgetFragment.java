@@ -3,6 +3,7 @@ package com.tips.android.main.estimate;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 
 import com.tips.android.TNTFragment;
 import com.tips.android.UIResultBus;
+import com.tips.android.network.EstimateManager;
 import com.tnt.android.R;
 
 import javax.inject.Inject;
@@ -34,6 +36,10 @@ public class EnterBudgetFragment extends TNTFragment {
 
 	@Inject
 	UIResultBus bus;
+
+	@Inject
+	EstimateManager manager;
+
 
 	@Override
 	public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -62,13 +68,15 @@ public class EnterBudgetFragment extends TNTFragment {
 			@Override
 			public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
 				if(actionId == EditorInfo.IME_ACTION_DONE){
-					bus.publish(new Budget(Double.valueOf(v.getText().toString())));
-					budget.setText(v.getText());
-					budget.setVisibility(View.VISIBLE);
-					enterBudgeField.setVisibility(View.GONE);
-					InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-					imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
-					return true;
+					if(!TextUtils.isEmpty(v.getText())){
+						manager.getBudget().budget = Double.valueOf(v.getText().toString());
+						budget.setText(v.getText());
+						budget.setVisibility(View.VISIBLE);
+						enterBudgeField.setVisibility(View.GONE);
+						InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+						imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+						return true;
+					}
 				}
 				return false;
 			}
@@ -78,5 +86,15 @@ public class EnterBudgetFragment extends TNTFragment {
 	@Override
 	public void onResume() {
 		super.onResume();
+		if(manager.getBudget().budget > 0){
+			budget.setText(String.valueOf(manager.getBudget().budget));
+			budget.setVisibility(View.VISIBLE);
+			enterBudgeField.setVisibility(View.GONE);
+			InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+			imm.hideSoftInputFromWindow(enterBudgeField.getWindowToken(), 0);
+		}else{
+			enterBudgeField.setVisibility(View.VISIBLE);
+			budget.setVisibility(View.GONE);
+		}
 	}
 }

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-	android:background="@drawable/summary_background_1">
+                xmlns:tools="http://schemas.android.com/tools"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/summary_background_1">
 	<TextView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
@@ -17,5 +18,58 @@
 		android:textStyle="bold"
 		android:layout_margin="8dp"
 		android:gravity="center"/>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:text="Budget:"
+		android:id="@+id/budget_title"
+		android:layout_gravity="center_horizontal"
+		android:textColor="#000000"
+		android:textStyle="bold"
+		android:gravity="center"
+		android:layout_below="@+id/title"
+		android:layout_centerHorizontal="true"
+		android:layout_margin="8dp"/>
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		tools:text="1000$"
+		android:id="@+id/budget"
+		android:layout_gravity="center_horizontal"
+		android:textColor="#000000"
+		android:textStyle="bold"
+		android:gravity="center"
+		android:layout_below="@+id/budget_title"
+		android:layout_centerHorizontal="true"
+		android:layout_margin="8dp"/>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:text="Estimate:"
+		android:id="@+id/estimate_title"
+		android:layout_gravity="center_horizontal"
+		android:textColor="#000000"
+		android:textStyle="bold"
+		android:gravity="center"
+		android:layout_below="@+id/budget"
+		android:layout_centerHorizontal="true"
+		android:layout_margin="8dp"/>
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		tools:text="2000$"
+		android:id="@+id/estimate"
+		android:layout_gravity="center_horizontal"
+		android:textColor="#000000"
+		android:textStyle="bold"
+		android:gravity="center"
+		android:layout_below="@+id/estimate_title"
+		android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

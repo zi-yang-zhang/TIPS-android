@@ -4,8 +4,11 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.FusedLocationProviderApi;
 import com.tips.android.TNTActivity;
 import com.tips.android.UIResultBus;
+import com.tips.android.network.EstimateManager;
 import com.tnt.android.R;
 
 import javax.inject.Inject;
@@ -15,12 +18,11 @@ import butterknife.ButterKnife;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
-import timber.log.Timber;
 
 /**
  * Created by zhangziy on 2016-06-04.
  */
-public class BudgetEstimationActivity extends TNTActivity{
+public class BudgetEstimationActivity extends TNTActivity {
 
 	@Bind(R.id.estimate_pager)
 	ViewPager estimatePager;
@@ -30,9 +32,14 @@ public class BudgetEstimationActivity extends TNTActivity{
 
 	Subscription busSubscription;
 
-	EstimateRequest currentEstimation = new EstimateRequest();
+	@Inject
+	GoogleApiClient googleApiClient;
 
-	Double budget;
+	@Inject
+	FusedLocationProviderApi locationAPI;
+
+	@Inject
+	EstimateManager manager;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -46,29 +53,35 @@ public class BudgetEstimationActivity extends TNTActivity{
 	@Override
 	protected void onResume() {
 		super.onResume();
+
 		busSubscription = bus.getBus().observeOn(AndroidSchedulers.mainThread()).subscribe(new Action1<Object>() {
 			@Override
 			public void call(Object o) {
-				if(o instanceof TravelDateAndDuration){
-					Timber.d("From %s" ,((TravelDateAndDuration) o).from.toString());
-					Timber.d("To %s" ,((TravelDateAndDuration) o).to.toString());
-					currentEstimation.fromDate = ((TravelDateAndDuration) o).from.getTime();
-					currentEstimation.toDate = ((TravelDateAndDuration) o).to.getTime();
-				}
 
-				if(o instanceof Budget){
-					Timber.d("Budget: %s", ((Budget) o).budget);
-					budget = ((Budget) o).budget;
-				}
-				if(estimatePager.getCurrentItem() < estimatePager.getAdapter().getCount()-1) estimatePager.setCurrentItem(estimatePager.getCurrentItem() + 1);
 			}
 		});
+
+
 	}
 
 	@Override
 	protected void onPause() {
 		super.onPause();
 		busSubscription.unsubscribe();
+	}
+
+	@Override
+	protected void onStart() {
+		super.onStart();
+		googleApiClient.connect();
+
+	}
+
+	@Override
+	protected void onStop() {
+		super.onStop();
+		googleApiClient.disconnect();
+
 	}
 
 	public static class DepthPageTransformer implements ViewPager.PageTransformer {

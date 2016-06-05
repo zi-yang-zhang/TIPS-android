@@ -2,7 +2,6 @@ package com.tips.android.dagger;
 
 import com.tnt.android.TNTApplication;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**

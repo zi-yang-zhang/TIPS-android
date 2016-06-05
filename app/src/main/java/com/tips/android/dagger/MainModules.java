@@ -17,6 +17,7 @@ public final class MainModules {
 						new AndroidModule(),
 						new ManagerModule(),
 						new DataSourceModule(),
+						new DataAPIModule(),
 						new BusModule()
 				);
 	}

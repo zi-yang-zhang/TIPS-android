@@ -41,7 +41,7 @@ ext {
     fresco = "0.9.0"
     butterknife = "7.0.1"
     dagger = "1.2.2"
-    retrofit = "2.0.0"
+    retrofit = "2.0.2"
     gson = "2.6.1"
     percentage = "23.1.1"
     timber = "4.1.1"

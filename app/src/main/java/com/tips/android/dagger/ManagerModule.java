@@ -1,6 +1,11 @@
 package com.tips.android.dagger;
 
+import com.tips.android.network.EstimateManager;
+
+import javax.inject.Singleton;
+
 import dagger.Module;
+import dagger.Provides;
 
 /**
  * Created by robertzzy on 17/02/16.
@@ -13,5 +18,11 @@ import dagger.Module;
 		library = true
 )
 public class ManagerModule {
+
+	@Provides
+	@Singleton
+	EstimateManager providesEstimateManager(){
+		return new EstimateManager();
+	}
 
 }

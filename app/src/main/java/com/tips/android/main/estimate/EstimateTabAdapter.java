@@ -11,6 +11,7 @@ public class EstimateTabAdapter extends FragmentPagerAdapter {
 
 	public EstimateTabAdapter(FragmentManager fm) {
 		super(fm);
+
 	}
 
 	@Override
@@ -34,4 +35,6 @@ public class EstimateTabAdapter extends FragmentPagerAdapter {
 	public int getCount() {
 		return 5;
 	}
+
+
 }

@@ -8,9 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.DatePicker;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.tips.android.TNTFragment;
 import com.tips.android.UIResultBus;
+import com.tips.android.network.EstimateManager;
 import com.tnt.android.R;
 
 import java.util.Calendar;
@@ -30,10 +32,15 @@ public class EnterDateFragment extends TNTFragment implements View.OnClickListen
 	@Bind(R.id.to_button)
 	ImageView toButton;
 
+	@Bind(R.id.from_date)
+	TextView fromDate;
+	@Bind(R.id.to_date)
+	TextView toDate;
 	@Inject
 	UIResultBus bus;
 
-	TravelDateAndDuration result;
+	@Inject
+	EstimateManager manager;
 
 
 	@Nullable
@@ -50,13 +57,19 @@ public class EnterDateFragment extends TNTFragment implements View.OnClickListen
 		super.onViewCreated(view, savedInstanceState);
 		fromButton.setOnClickListener(this);
 		toButton.setOnClickListener(this);
-		result = new TravelDateAndDuration();
+
 
 	}
 
 	@Override
 	public void onResume() {
 		super.onResume();
+		if(manager.getDuration().fromSet){
+			fromDate.setText(manager.getDuration().getFromString());
+		}
+		if(manager.getDuration().toSet){
+			toDate.setText(manager.getDuration().getToString());
+		}
 	}
 
 	@Override
@@ -68,11 +81,8 @@ public class EnterDateFragment extends TNTFragment implements View.OnClickListen
 				DatePickerDialog from = new DatePickerDialog(v.getContext(), new DatePickerDialog.OnDateSetListener() {
 					@Override
 					public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-						result.setupFrom(year,monthOfYear,dayOfMonth);
-						if(result.isDateAndDurationCompelete()){
-							bus.publish(result);
-						}
-
+						manager.setDurationFrom(year,monthOfYear+1,dayOfMonth);
+						fromDate.setText(manager.getDuration().getFromString());
 					}
 				},newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
 				from.show();
@@ -81,17 +91,18 @@ public class EnterDateFragment extends TNTFragment implements View.OnClickListen
 				DatePickerDialog to = new DatePickerDialog(v.getContext(), new DatePickerDialog.OnDateSetListener() {
 					@Override
 					public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-						result.setupTo(year,monthOfYear,dayOfMonth);
-						if(result.isDateAndDurationCompelete()){
-							bus.publish(result);
-						}
-
+						manager.setDurationTo(year,monthOfYear+1,dayOfMonth);
+						toDate.setText(manager.getDuration().getToString());
 					}
 				},newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
 				to.show();
 				break;
 		}
 	}
+
+
+
+
 
 
 }

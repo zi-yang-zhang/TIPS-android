@@ -25,7 +25,62 @@ public class TravelDateAndDuration {
 		return this;
 	}
 
-	public boolean isDateAndDurationCompelete(){
+	public boolean isDateAndDurationComplete(){
 		return fromSet && toSet;
+	}
+
+	public String getFromString(){
+		StringBuilder sb = new StringBuilder();
+		sb.append(from.get(Calendar.YEAR))
+		.append("/")
+		.append(from.get(Calendar.MONTH))
+		.append("/")
+		.append(from.get(Calendar.DAY_OF_MONTH));
+		return sb.toString();
+	}
+	public String getToString(){
+		StringBuilder sb = new StringBuilder();
+		sb.append(to.get(Calendar.YEAR))
+				.append("/")
+				.append(to.get(Calendar.MONTH))
+				.append("/")
+				.append(to.get(Calendar.DAY_OF_MONTH));
+		return sb.toString();
+	}
+
+	public Calendar getFrom() {
+		return from;
+	}
+
+	public TravelDateAndDuration setFrom(Calendar from) {
+		this.from = from;
+		return this;
+	}
+
+	public Calendar getTo() {
+		return to;
+	}
+
+	public TravelDateAndDuration setTo(Calendar to) {
+		this.to = to;
+		return this;
+	}
+
+	public boolean isFromSet() {
+		return fromSet;
+	}
+
+	public TravelDateAndDuration setFromSet(boolean fromSet) {
+		this.fromSet = fromSet;
+		return this;
+	}
+
+	public boolean isToSet() {
+		return toSet;
+	}
+
+	public TravelDateAndDuration setToSet(boolean toSet) {
+		this.toSet = toSet;
+		return this;
 	}
 }
