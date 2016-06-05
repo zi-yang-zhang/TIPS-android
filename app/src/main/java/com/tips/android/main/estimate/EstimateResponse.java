@@ -50,7 +50,7 @@ public class EstimateResponse {
 
 
 	@Expose
-	@SerializedName("floating_daily_expenses")
+	@SerializedName("floating_daily_expense")
 	Double floatingDailyExpenses;
 
 	@Expose
@@ -68,6 +68,14 @@ public class EstimateResponse {
 		@Expose
 		@SerializedName("currency_type")
 		String type;
+
+		public String getSign() {
+			return sign;
+		}
+
+		public String getType() {
+			return type;
+		}
 	}
 
 
@@ -86,6 +94,22 @@ public class EstimateResponse {
 		@Expose
 		@SerializedName("price")
 		Double price;
+
+		public String getName() {
+			return name;
+		}
+
+		public Double getStarRating() {
+			return starRating;
+		}
+
+		public Double getReviewRating() {
+			return reviewRating;
+		}
+
+		public Double getPrice() {
+			return price;
+		}
 	}
 
 
@@ -107,6 +131,25 @@ public class EstimateResponse {
 		@SerializedName("return_price")
 		Double returnPrice;
 
+		public String getDepartureAgency() {
+			return departureAgency;
+		}
+
+		public Double getDeparturePrice() {
+			return departurePrice;
+		}
+
+		public Double getReviewRating() {
+			return reviewRating;
+		}
+
+		public String getReturnAgency() {
+			return returnAgency;
+		}
+
+		public Double getReturnPrice() {
+			return returnPrice;
+		}
 	}
 
 	public static class CarRental{
@@ -120,6 +163,18 @@ public class EstimateResponse {
 		@Expose
 		@SerializedName("thumbnail_url")
 		String thumbnail;
+
+		public Double getPrice() {
+			return price;
+		}
+
+		public String getModel() {
+			return model;
+		}
+
+		public String getThumbnail() {
+			return thumbnail;
+		}
 	}
 
 	public CurrencyConfiguration getCurrencyConfiguration() {

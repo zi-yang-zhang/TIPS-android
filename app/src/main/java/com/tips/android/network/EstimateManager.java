@@ -66,7 +66,7 @@ public class EstimateManager {
 	public EstimateManager(){
 		HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
 		interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-		OkHttpClient client = new OkHttpClient.Builder().connectTimeout(0, TimeUnit.MILLISECONDS).addInterceptor(interceptor).build();
+		OkHttpClient client = new OkHttpClient.Builder().connectTimeout(0, TimeUnit.MILLISECONDS).readTimeout(0,TimeUnit.MILLISECONDS).addInterceptor(interceptor).build();
 
 		expediaAPI =  new Retrofit.Builder()
 				.client(client)

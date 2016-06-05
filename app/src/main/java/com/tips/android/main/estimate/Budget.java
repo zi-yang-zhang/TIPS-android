@@ -12,5 +12,7 @@ public class Budget {
 		this.budget = budget;
 	}
 
-
+	public double getBudget() {
+		return budget;
+	}
 }

@@ -11,6 +11,7 @@ import com.tips.android.main.estimate.EnterDateFragment;
 import com.tips.android.main.estimate.EnterDestinationFragment;
 import com.tips.android.main.estimate.EnterHotelFragment;
 import com.tips.android.main.estimate.EstimationSummaryFragment;
+import com.tips.android.main.plan.PlanActivity;
 
 import dagger.Module;
 
@@ -26,6 +27,7 @@ import dagger.Module;
 				EnterDestinationFragment.class,
 				EnterHotelFragment.class,
 				EstimationSummaryFragment.class,
+				PlanActivity.class,
 
 
 
