@@ -152,7 +152,7 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/from_date_container"
-		android:layout_below="@+id/car_rental"
+		android:layout_below="@+id/car_model"
 		android:orientation="horizontal"
 		android:gravity="center">
 
@@ -232,6 +232,15 @@
 			fresco:viewAspectRatio="1.33"/>
 
 	</LinearLayout>
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/car_model"
+		android:layout_centerHorizontal="true"
+		android:layout_margin="8dp"
+		tools:text="car"
+	    android:layout_below="@+id/car_rental"
+		/>
 
 
 </RelativeLayout>

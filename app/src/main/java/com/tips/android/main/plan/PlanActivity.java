@@ -68,6 +68,9 @@ public class PlanActivity extends TNTActivity {
 	@Bind(R.id.swipe_layout)
 	SwipeRefreshLayout swipeRefreshLayout;
 
+	@Bind(R.id.car_model)
+	TextView carModel;
+
 	@Inject
 	EstimateManager manager;
 
@@ -141,7 +144,7 @@ public class PlanActivity extends TNTActivity {
 		}else{
 			difference.setTextColor(getResources().getColor(R.color.green));
 		}
-
+		carModel.setText(manager.getEstimateResponse().getCarRental().getModel());
 		fromDate.setText(manager.getDuration().getFromString());
 		toDate.setText(manager.getDuration().getToString());
 		if(!TextUtils.isEmpty(manager.getEstimateResponse().getCarRental().getThumbnail())){
